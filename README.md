@@ -1,4 +1,4 @@
-# ML 2025 Supplmentary Materials
+# ML 2026 Supplmentary Materials
 
 ## Demo 0: Linear & Logistic Regression
 
