@@ -1,16 +1,14 @@
 #First, download medical_mnist.zip
-#from Kaggle https://www.kaggle.com/datasets/andrewmvd/medical-mnist or
-#from dropbox https://www.dropbox.com/scl/fi/wql10vir4zk5mppc88nl8/medical_mnist.zip?rlkey=majqo92r2g5uejqmsnmlo0l5j&dl=0
-#unzip the data to Exercise2 / mmnist/
+#from Kaggle https://www.kaggle.com/datasets/andrewmvd/medical-mnist
 #import all the helper functions
 
 from utils_mnist import *
 import numpy as np
 
 
-class Trainer_template:
-    def __init__(self):
-        """ a __init__ method that every python class need."""
+class Trainer:
+    def __init__(self, args, train_loader, validation_loader, model, loss_function, optimizer):
+        """Store the arguments, data loaders, model, loss function, and optimizer on self."""
         pass
 
     def overall_loop(self):
@@ -19,25 +17,26 @@ class Trainer_template:
 
     def training_loop(self, train_loader):
         """Iterate through train batches, compute losses. Returns list of losses."""
-        return train_loss
+        pass
 
     def validation_loop(self, validation_loader):
         """Iterate through validation batches, compute losses. Returns list of losses."""
-        return validation_loss
+        pass
 
     def training_step(self, train_batch):
         """Forward pass, compute loss, backprop, update weights. Returns loss."""
-        return loss
+        pass
 
     def validation_step(self, validation_batch):
         """Forward pass, compute loss (no backprop). Returns loss."""
-        return loss
+        pass
+
 
 # arguments
 def get_arguments():
     # Hyper-parameters
     args = {'img_size': 64 * 64,
-            'num_classes': 10,
+            'num_classes': 6,
             'num_epochs': 50,
             'batch_size': 16,
             'learning_rate': 0.001,
@@ -91,9 +90,9 @@ for images, labels in validation_loader:
 
     _, predicted = torch.max(outputs.data, 1)
     total += labels.size(0)
-    correct += (predicted == labels).sum()
+    correct += (predicted == labels).sum().item()
 
 print(correct)
 print(total)
 
-print('Accuracy of the model on the 10000 test images: {} %'.format(100 * correct / total))
+print('Accuracy of the model on the {} validation images: {:.2f} %'.format(total, 100 * correct / total))

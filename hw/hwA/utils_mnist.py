@@ -152,7 +152,7 @@ def get_medical_mnist(args):
 
 
 if __name__ == '__main__':
-    root = 'Exercise2/mmnist/'
+    root = 'mmnist/'
     train_dataset = MedicalMnist(root=root, index=range(7000))
     validation_dataset = MedicalMnist(root=root, index=range(7000, 10000))
 
