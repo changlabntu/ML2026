@@ -1,5 +1,5 @@
 """
-Homework 1: Your Model vs. the LLM
+Demo A: Your Model vs. the LLM
 ==================================
 
 You will build a text classifier two ways and let them fight:
@@ -470,8 +470,8 @@ def tsne_embed(X_dense):
                 init="pca").fit_transform(X_dense)
 
 
-st.set_page_config(page_title="HW1: Model vs LLM", page_icon="🥊", layout="wide")
-st.title("Homework 1: Your Model vs. the LLM")
+st.set_page_config(page_title="Demo A: Model vs LLM", page_icon="🥊", layout="wide")
+st.title("Demo A: Your Model vs. the LLM")
 st.markdown("""
 Train a **bag-of-words logistic regression** (scikit-learn — the library whose
 internals you built in homework 0) on medical product reviews, then make the
